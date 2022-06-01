@@ -1,0 +1,22 @@
+Game composition:
+-> Board
+    -> methods to display Board
+    -> attributes representing all players cards
+    -> update board after hits 
+-> cards
+    -> control shufling of deck and dealing
+    -> representation of all cards
+    -> contain value of each card
+-> players
+    -> decide hit and stay
+    -> decide splits, double down
+    *-> computer
+-> control
+    -> calculates sum of player's cards
+    -> determines splits, black jacks, winners
+
+-> main
+    -> decide number of players
+    -> set-up each step of the Game
+    -> call control to check
+    -> display board after any update

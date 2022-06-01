@@ -1,0 +1,33 @@
+Black jack
+
+Objective____________
+* The objective is to get closer to 21 than the dealer without going above 21
+
+Cards-and-value_________
+* J,Q,K --> 10 points
+* 2 - 10 ---> face value
+* Ace ---> 1 or 11 (whichever is better)
+
+Deal_________
+* Each player is dealt two cards, one at a time and after the other
+* All player cards are face-up but dealer has one card face down
+
+Play______
+* Each player can hit or stay! 
+* hit indicates the player wants another card
+* a stay indicates a player wants no more cards
+
+Rules________
+* If a player is dealt 21 on the first 2 cards, he gets BlackJack. That is he is given 3 chips for every 2 chips bet
+* If a player gets a split, both staks are hit and stayed separately
+* If a player and the dealer tie, it is called a Push. Player keeps his original bet
+* If the dealer's first 2 cards <= 16 he is forced to hit. If the dealer's first 2 cards > 16 he is foced to stay
+
+
+splitting____________
+* If you have two similar cards, you can split into different stacks and get an additional bet to double chance of winning
+
+Double-down_______
+* If a player's first two cards sum to 9, 10 or 11. He gets the chance to double his bet, make one more hit then stays
+
+
