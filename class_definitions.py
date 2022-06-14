@@ -122,12 +122,13 @@ class Player:
         length = len(self.player_cards.keys())
         tlength = 0
         for stack in self.player_cards:
+            self.bust[stack] = []
             if self.player_cards[stack][0] == False:
                 for value in self.player_cards[stack][1]:
-                    if value not in range(22):
-                        self.bust[stack+"."+str(self.player_cards[stack][1].index(value))] = value
-                        self.player_cards[stack][1].remove(value)
-                if len(self.player_cards[stack][1]) == 0:
+                    if value not in range(21):
+                        self.bust[stack].append(value)
+                        # self.player_cards[stack][1].remove(value)
+                if len(self.bust[stack]) == len(self.player_cards[stack][1]):
                     self.player_cards[stack][0] = True
                     tlength += 1
             else:
@@ -301,9 +302,13 @@ class Control:
                  final_totals.append(totals_2[totals_1.index(total)])
                  
         if max(final_totals) <= 21:
-            return max(final_totals)
-        final_totals.remove(max(final_totals))
-        return(final_totals[0])       
+            to_return =  max(final_totals)
+        else:
+            final_totals.sort()
+            to_return = final_totals[0]
+        if to_return in totals_1:
+            self.players[0].player_cards["stack_1"].pop()
+        return to_return
             
             
     
@@ -329,7 +334,7 @@ class Control:
                             print("!! ``PUSH' !!")
                     else:
                         print("!! ``WINNER' !!")
-
+            print()
 ### Control TEst
 blackjack = Control()
 blackjack.get_players()
